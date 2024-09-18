@@ -7,11 +7,11 @@
     "start": "astro dev",
     "preview": "astro build && wrangler pages dev",
     "astro": "astro",
-    "deploy": "wrangler pages deploy --main",
+    "deploy": "wrangler pages deploy",
     "cf-typegen": "wrangler types",
     "github": "git add . && git commit -m 'Deploy to GitHub' && git push origin HEAD",
     "clean": "rimraf dist .astro cache .vite",
-    "build": "pnpm run clean && astro check && astro build && pnpm run github && pnpm run deploy"
+    "build": "pnpm run clean && astro check && astro build && pnpm run deploy && pnpm run github"
 
 
   },
