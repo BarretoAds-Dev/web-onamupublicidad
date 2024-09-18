@@ -1,0 +1,50 @@
+---
+const { title, description, url, image } = Astro.props;
+
+const favicon = "/favicon.ico"; // Ruta del favicon
+const fontUrl =
+  "https://cdn.jsdelivr.net/fontsource/fonts/bricolage-grotesque:vf@latest/latin-wght-normal.woff2";
+  
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <link rel="canonical" href={url} />
+  <link rel="icon" type="image/x-icon" href={favicon} />
+
+  <!-- Resolver el DNS y establecer una conexión temprana -->
+  <link rel="dns-prefetch" href="https://onamupublicidad.dev">
+  <link rel="preconnect" href="https://onamupublicidad.dev" crossorigin="anonymous">
+
+  <!-- Precarga de la fuente -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+  <link
+    rel="preload"
+    href={fontUrl}
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+    fetchpriority="high"
+  />
+
+  <meta name="application-name" content="Onamu Publicidad" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+
+  <!-- Metadatos de Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={image} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Onamu Publicidad" />
+  <meta property="og:locale" content="es_ES" />
+
+
+</head>

@@ -1,54 +1,32 @@
-# Astro Starter Kit: Basics
+# Comenzando con Astro 🚀
 
-```sh
-npm create astro@latest -- --template basics
-```
+¡Hola! Estoy comenzando este proyecto con **[Astro](https://astro.build)**, un framework ligero para crear sitios web rápidos. Además, estoy aprendiendo a integrar **[Tailwind CSS](https://tailwindcss.com)** para mejorar el diseño y la experiencia de usuario. Mi enfoque principal es optimizar este sitio para obtener el mejor rendimiento y velocidad posible.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## ⚙️ Tecnologías
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Este proyecto utiliza las siguientes tecnologías:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Astro**: Framework para sitios rápidos y optimizados.
+- **Tailwind CSS**: Framework de CSS para estilos rápidos y consistentes.
+- **Optimización de rendimiento**: Estoy trabajando para asegurar que este sitio cargue rápido y sea eficiente en todas las plataformas.
 
-## 🚀 Project Structure
+## 🎯 Objetivos
 
-Inside of your Astro project, you'll see the following folders and files:
+1. **Aprender Astro**: Explorar cómo utilizar Astro para construir un sitio web dinámico y optimizado.
+2. **Integrar Tailwind CSS**: Implementar Tailwind CSS para crear un diseño visualmente atractivo y flexible.
+3. **Optimización de rendimiento**: Mejorar la velocidad de carga y la eficiencia del sitio mediante buenas prácticas de desarrollo web.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 💬 ¡Comentarios bienvenidos!
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Dado que estoy aprendiendo y experimentando con estas tecnologías, cualquier comentario, consejo o sugerencia será muy apreciado. ¡Me encantaría recibir feedback para mejorar tanto el código como el rendimiento del sitio!
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+---
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📖 Cómo comenzar
 
-## 🧞 Commands
+Si quieres ver el proyecto en acción, sigue estos pasos:
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Clona el repositorio:
+   ```sh
+   git clonehttps://github.com/BarretoAds-Dev/web-onamupublicidad.git
+   cd tu-repo

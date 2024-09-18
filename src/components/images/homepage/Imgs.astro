@@ -1,0 +1,48 @@
+---
+export interface Props {
+  imageType?: string;
+  class?: string;
+  alt?: string;
+  loading?: "eager" | "lazy";
+  width?: string | number;
+  height?: string | number;
+}
+
+const BASE_URL =
+  "https://res.cloudinary.com/onamuapp/image/upload/q_auto,fl_immutable_cache";
+const DEFAULT_IMAGE = "v1723315867/Hacemos-tu-pagina-web-en-cdmx_shddug.webp";
+
+const generateSrcSet = (path: string): string => {
+  return [300, 600, 900, 1200]
+    .map((w) => `${BASE_URL}/f_avif,w_${w},c_limit/${path} ${w}w`)
+    .join(", ");
+};
+
+const {
+  imageType = "image1",
+  class: customClass = "",
+  alt = "Diseño de Página Web Profesional en México",
+  loading = "eager",
+  width = 1100,
+  height = 450,
+} = Astro.props;
+
+const path =
+  imageType === "image1" ? DEFAULT_IMAGE : `path/to/${imageType}.webp`;
+const srcset = generateSrcSet(path);
+const fallbackSrc = `${BASE_URL}/f_auto/${path}`; // Usar f_auto para compatibilidad
+
+const className = `optimized-image ${customClass}`.trim();
+---
+
+<img
+  src={fallbackSrc}
+  alt={alt}
+  class={`${className} block max-w-full h-auto rounded-2xl aspect-[1.66]`}
+  srcset={srcset}
+  sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw"
+  loading={loading}
+  decoding="async"
+  width={String(width)}
+  height={String(height)}
+/>

@@ -12,12 +12,10 @@
     "github": "git add . && git commit -m 'Deploy to GitHub' && git push origin HEAD",
     "clean": "rimraf dist .astro cache .vite",
     "build": "pnpm run clean && astro check && astro build && pnpm run github && pnpm run deploy"
-
-
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
-    "@astrojs/cloudflare": "^11.0.4",
+    "@astrojs/cloudflare": "^11.0.5",
     "astro": "^4.15.7",
     "rimraf": "^6.0.1",
     "typescript": "^5.6.2"
