@@ -1,0 +1,44 @@
+/********************************
+
+  HUMANOS DETRÁS DE ESTE SITIO
+
+********************************/
+
+  Desarrollado por: Onamu Publicidad
+  Contacto: contacto@onamupublicidad.dev
+  Sitio web: https://onamupublicidad.dev
+
+/********************************
+
+    GRACIAS A LAS SIGUIENTES
+      TECNOLOGÍAS Y HERRAMIENTAS
+
+********************************/
+
+  Plataforma: Astro Build
+  Lenguajes: HTML, CSS, TypeScript
+  CSS Framework: Tailwind CSS
+  Optimización de Imágenes: Cloudinary
+  Hosting: Cloudflare Pages
+  Gestor de Paquetes: pnpm
+  Herramientas de Desarrollo: Visual Studio Code
+
+/********************************
+
+        REDES SOCIALES
+
+********************************/
+
+  Twitter: @onamupublicidad
+  LinkedIn: https://linkedin.com/company/onamupublicidad
+  Facebook: https://facebook.com/onamupublicidad
+  Instagram: https://instagram.com/onamupublicidad
+  YouTube: https://youtube.com/onamupublicidad
+
+/********************************
+
+        MENSAJE ESPECIAL
+
+********************************/
+
+  "Dedicado a todos aquellos que aman el código y el diseño."

@@ -1,0 +1,28 @@
+# Permite acceso a todos los motores de búsqueda
+User-agent: *
+Disallow: /private/        # Bloquea contenido confidencial
+Disallow: /temp/           # Bloquea carpetas temporales o en construcción
+Disallow: /scripts/        # Bloquea scripts internos si no deben ser rastreados
+Disallow: /old-version/    # Bloquea versiones antiguas del sitio
+
+# Evita el rastreo de parámetros de URL que no afectan el contenido
+Disallow: /*?utm_source
+Disallow: /*?sessionid
+
+# Permite el rastreo de JavaScript, CSS, e imágenes para evitar penalizaciones de Google
+Allow: /*.css$
+Allow: /*.js$
+Allow: /images/
+
+# Permite el rastreo de la API de Google Fonts y otros recursos necesarios
+User-agent: Googlebot
+Allow: /css/
+Allow: /fonts/
+Allow: /js/
+
+# Bloquea bots específicos conocidos por generar tráfico no deseado
+User-agent: BadBot
+Disallow: /
+
+# Especifica la ubicación del sitemap
+Sitemap: https://onamupublicidad.dev/sitemap.xml

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Onamu Publicidad</ShortName>
+  <Description>Busca servicios de diseño web, desarrollo de páginas web, diseño gráfico, administración de redes sociales y publicidad digital en Onamu Publicidad</Description>
+  <Tags>diseño web, desarrollo de páginas web, diseño gráfico, administración de redes sociales, publicidad digital, Benito Juárez, Cuauhtémoc, Miguel Hidalgo, Colonia Del Valle, Polanco, Roma Norte, Condesa</Tags>
+  <Contact>mailto:contacto@onamupublicidad.dev</Contact>
+  <Url type="text/html" template="https://onamupublicidad.dev/search?q={searchTerms}"/>
+  <LongName>Onamu Publicidad - Servicios de Diseño Web, Desarrollo de Páginas Web, Diseño Gráfico, Administración de Redes Sociales y Publicidad Digital</LongName>
+  <Image height="16" width="16" type="image/x-icon">https://onamupublicidad.dev/favicon.ico</Image>
+  <Image height="64" width="64" type="image/png">https://onamupublicidad.dev/icons/icon-64x64.png</Image>
+  <Developer>Onamu Publicidad</Developer>
+  <Attribution>© 2024 Onamu Publicidad. Todos los derechos reservados.</Attribution>
+  <SyndicationRight>open</SyndicationRight>
+  <AdultContent>false</AdultContent>
+  <Language>es-mx</Language>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+
+  <!-- Frases de búsqueda comunes -->
+  <Query role="example" searchTerms="diseño web en Benito Juárez"/>
+  <Query role="example" searchTerms="desarrollo de páginas web en Cuauhtémoc"/>
+  <Query role="example" searchTerms="diseño gráfico en Miguel Hidalgo"/>
+  <Query role="example" searchTerms="administración de redes sociales en Benito Juárez"/>
+  <Query role="example" searchTerms="publicidad digital en Cuauhtémoc"/>
+  
+  <!-- Frases de búsqueda con ubicación específica -->
+  <Query role="example" searchTerms="diseño de sitios web en colonia Escandón, Miguel Hidalgo"/>
+  <Query role="example" searchTerms="desarrollo web en colonia Roma, Cuauhtémoc"/>
+  <Query role="example" searchTerms="diseño gráfico en colonia Polanco, Miguel Hidalgo"/>
+  <Query role="example" searchTerms="administración de redes sociales en colonia Condesa, Cuauhtémoc"/>
+  <Query role="example" searchTerms="publicidad digital en colonia Nápoles, Benito Juárez"/>
+  
+  <!-- Frases de búsqueda con enfoque en Ciudad de México -->
+  <Query role="example" searchTerms="diseño web en Benito Juárez, Ciudad de México"/>
+  <Query role="example" searchTerms="desarrollo de páginas web en Cuauhtémoc, Ciudad de México"/>
+  <Query role="example" searchTerms="diseño gráfico en Miguel Hidalgo, Ciudad de México"/>
+  <Query role="example" searchTerms="administración de redes sociales en Benito Juárez, Ciudad de México"/>
+  <Query role="example" searchTerms="publicidad digital en Cuauhtémoc, Ciudad de México"/>
+  
+  <!-- Frases de búsqueda long-tail para pequeñas empresas -->
+  <Query role="example" searchTerms="diseño de sitios web para pequeñas empresas en Benito Juárez"/>
+  <Query role="example" searchTerms="desarrollo web para pequeñas empresas en Cuauhtémoc"/>
+  <Query role="example" searchTerms="diseño gráfico para pequeñas empresas en Miguel Hidalgo"/>
+  <Query role="example" searchTerms="administración de redes sociales para pequeñas empresas en Benito Juárez"/>
+  <Query role="example" searchTerms="publicidad digital para pequeñas empresas en Cuauhtémoc"/>
+  
+  <!-- Frases de búsqueda basadas en preguntas comunes -->
+  <Query role="example" searchTerms="¿cómo mejorar el rendimiento de mi sitio web?"/>
+  <Query role="example" searchTerms="¿cuáles son los mejores servicios de diseño web en México?"/>
+  <Query role="example" searchTerms="¿qué agencia de publicidad digital contratar en Ciudad de México?"/>
+  <Query role="example" searchTerms="¿cómo gestionar redes sociales para negocios locales en Benito Juárez?"/>
+  <Query role="example" searchTerms="¿dónde encontrar diseño gráfico profesional en Miguel Hidalgo?"/>
+</OpenSearchDescription>

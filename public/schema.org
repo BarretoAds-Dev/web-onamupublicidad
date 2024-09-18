@@ -1,0 +1,77 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Onamu Publicidad",
+  "image": "https://onamupublicidad.dev/logo.png",
+  "description": "Onamu Publicidad - Expertos en Páginas Web y Publicidad Digital en Ciudad de México.",
+  "url": "https://onamupublicidad.dev",
+  "telephone": "+52-55-2683-8286",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. Jose Rosas Moreno 86-A",
+    "addressLocality": "San Rafael",
+    "addressRegion": "CDMX",
+    "postalCode": "06470",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "19.4414",
+    "longitude": "-99.1597"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+52-55-2683-8286",
+    "contactType": "Customer Service",
+    "areaServed": "MX",
+    "availableLanguage": ["es", "en"]
+  },
+  "sameAs": [
+    "https://www.instagram.com/onamuads/",
+    "https://www.facebook.com/onamupublicidad",
+    "https://mx.pinterest.com/onamupublicidad/",
+    "https://www.tiktok.com/@onamupublicidad",
+    "https://mx.linkedin.com/company/onamupublicidad"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Enmanuel Barreto",
+    "jobTitle": "Diseñador UX",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Onamu Publicidad"
+    }
+  },
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://onamupublicidad.dev/contact",
+      "inLanguage": "es",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/TabletWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": {
+      "@type": "Reservation",
+      "name": "Estudio de Publicidad Digital"
+    }
+  }
+}
