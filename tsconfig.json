@@ -1,11 +1,43 @@
 {
-    "extends": "astro/tsconfigs/strict",
-    "compilerOptions": {
-      "types": ["@cloudflare/workers-types"]
-    },
-    "baseUrl": ".",
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "target": "ESNext",                         // Utilizar las últimas características de JavaScript
+    "module": "ESNext",                         // Utilizar módulos ESNext, optimizados para herramientas modernas de construcción
+    "moduleResolution": "Node",                 // Resolución de módulos basada en Node.js para compatibilidad
+    "strict": true,                             // Mantener configuración estricta para evitar errores de código
+    "jsx": "react-jsx",                         // Configuración JSX optimizada para React con nuevo transformador JSX
+    "types": [
+      "node",                                   // Incluir tipos de Node.js para compatibilidad del entorno
+      "@cloudflare/workers-types",              // Incluir tipos específicos para Cloudflare Workers
+      "astro/client",                           // Incluir tipos específicos para componentes cliente de Astro
+                            // Incluir tipos de React DOM para desarrollo con TypeScript
+    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],   // Incluir bibliotecas DOM y ESNext para compatibilidad completa
+    "baseUrl": "./",                            // Base URL para las rutas del módulo
     "paths": {
-      "@components/*": ["src/components/*"]
-    }
-  }
-  
+      "@/*": ["src/*"],                         // Alias generales para facilitar la importación de módulos
+      "@components/*": ["src/components/*"],    // Alias para componentes
+      "@layouts/*": ["src/layouts/*"],          // Alias para layouts
+      "@utils/*": ["src/utils/*"]               // Alias para utilidades
+    },
+    "esModuleInterop": true,                    // Mejor interoperabilidad con módulos CommonJS y ESModules
+    "allowSyntheticDefaultImports": true,       // Permitir importaciones por defecto sintéticas, útil para compatibilidad con ESM y CommonJS
+    "skipLibCheck": true,                       // Saltarse la verificación de las bibliotecas para una compilación más rápida
+    "forceConsistentCasingInFileNames": true,   // Asegurar la consistencia en los nombres de archivos
+    "strictNullChecks": true,                   // Requerir chequeo estricto de null para evitar errores de referencia
+    "noImplicitAny": true,                      // No permitir 'any' implícito para evitar errores de tipo
+    "isolatedModules": true,                    // Requerido por sistemas de construcción como Babel y SWC para optimizaciones avanzadas
+    "resolveJsonModule": true,                  // Permitir importación de archivos JSON
+    "allowJs": true,                            // Permitir la importación de archivos JS junto con TS
+    "incremental": true,                        // Habilitar compilación incremental para mejorar los tiempos de compilación
+    "noEmit": true,                             // No emitir archivos JS ya que Astro maneja el build
+    "useDefineForClassFields": true,            // Utilizar 'define' para campos de clase
+    "removeComments": true,                     // Remover comentarios en la salida, si fuera emitida
+    "downlevelIteration": true,                 // Habilitar la iteración en versiones anteriores de ECMAScript
+    "exactOptionalPropertyTypes": false,        // No usar tipos exactos para propiedades opcionales, permitiendo más flexibilidad
+    "preserveWatchOutput": true,                // Mantener la salida de observación para facilitar el desarrollo
+    "disableSizeLimit": true                    // Deshabilitar el límite de tamaño de proyecto para evitar errores en proyectos grandes
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"],  // Asegurar inclusión de archivos .tsx
+  "exclude": ["node_modules", "dist", ".astro"]
+}

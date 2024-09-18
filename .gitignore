@@ -1,28 +1,78 @@
-# build output
+# Build output
 dist/
 
-# generated types
+# Generated types
 .astro/
 
-# dependencies
+# Vite cache directory
+.vite-cache/
+
+# Dependencies
 node_modules/
 
-# logs
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# Environment variables
 .env
 .env.production
 
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# JetBrains IDE settings folder
 .idea/
 
-# wrangler files
+# Wrangler files
 .wrangler
 .dev.vars
+
+# Visual Studio Code settings
+.vscode/
+
+# Other IDE and editor settings
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary files
+tmp/
+temp/
+
+# Output of build tools
+out/
+build/
+
+# Coverage reports
+coverage/
+
+# Lock files (optional, if you want to ignore them)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ESLint cache
+.eslintcache
+
+# Stylelint cache
+.stylelintcache
+
+# Prettier cache
+.prettiercache
+
+# Optional npm cache directory
+.npm/
+
+# Optional Yarn cache directory
+.yarn/cache/
+
+# Optional log files
+*.log
+
+# Images built by Docker
+*.tar

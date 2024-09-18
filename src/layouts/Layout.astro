@@ -1,5 +1,7 @@
 ---
 import Head from '../layouts/Head.astro';
+import Header from '../layouts/Header.astro';
+import Footer from '../layouts/Footer.astro';
 
 interface Props {
 	title: string;
@@ -21,41 +23,35 @@ const { title, description, url, image } = Astro.props;
  -->
 <html lang="es" dir="ltr">
 	<Head title={title} description={description} url={url} image={image} />
-	<body>
+
+	<body class="bg-bodydark p-0 m-0 text-fontlight font-bricolage">
+        
+		<Header />
 		<slot />
+		<Footer />
+	
 	</body>
 </html>
 
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	@font-face {
-    font-family: "Bricolage Grotesque Variable";
-    font-style: normal;
-    font-weight: 400 800;
-    font-optical-sizing: auto;
-    font-display: optional;
-    font-stretch: normal; /* added */
-    src: url("https://cdn.jsdelivr.net/fontsource/fonts/bricolage-grotesque:vf@latest/latin-wght-normal.woff2")
-      format("woff2-variations");
-    unicode-range: U+0000-00FF;
-    font-feature-settings: "kern", "liga", "calt";
-    font-variation-settings: "wght" 400 800;
-    ascent-override: 90%;
-    line-gap-override: 20%;
-  }
-	html {
-		font-family: "Bricolage Grotesque Variable";
-		background: #13151a;
-	}
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
 	
-</style>
+	@font-face {
+		font-family: "Bricolage Grotesque Variable";
+		font-style: normal;
+		font-weight: 400 800;
+		font-optical-sizing: auto;
+		font-display: optional;
+		font-stretch: normal; /* added */
+		src: url("https://cdn.jsdelivr.net/fontsource/fonts/bricolage-grotesque:vf@latest/latin-wght-normal.woff2")
+		  format("woff2-variations");
+		unicode-range: U+0000-00FF;
+		font-feature-settings: "kern", "liga", "calt";
+		font-variation-settings: "wght" 400 800;
+		ascent-override: 90%;
+		line-gap-override: 20%;
+	  }
+	</style>
