@@ -54,4 +54,38 @@ const { title, description, url, image } = Astro.props;
 		ascent-override: 90%;
 		line-gap-override: 20%;
 	  }
+
+
+
+@layer utilities {
+	.shadow-neon {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                0 0 20px rgba(255, 255, 255, 0.2),
+                0 0 30px rgba(255, 255, 255, 0.1);
+  }
+
+  .neon-effect {
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.7),
+                0 0 16px rgba(0, 255, 0, 0.5),
+                0 0 24px rgba(0, 255, 0, 0.3),
+                0 0 32px rgba(0, 255, 0, 0.2);
+    animation: neon-glow 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes neon-glow {
+    from {
+      box-shadow: 0 0 8px rgba(0, 255, 0, 0.7),
+                  0 0 16px rgba(0, 255, 0, 0.5),
+                  0 0 24px rgba(0, 255, 0, 0.3),
+                  0 0 32px rgba(0, 255, 0, 0.2);
+    }
+    to {
+      box-shadow: 0 0 12px rgba(0, 255, 0, 1),
+                  0 0 24px rgba(0, 255, 0, 0.8),
+                  0 0 36px rgba(0, 255, 0, 0.6),
+                  0 0 48px rgba(0, 255, 0, 0.4);
+    }
+  }
+}
+
 	</style>
