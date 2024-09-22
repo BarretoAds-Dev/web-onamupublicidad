@@ -24,10 +24,15 @@ const { title, description, url, image } = Astro.props;
 <html lang="es" dir="ltr">
 	<Head title={title} description={description} url={url} image={image} />
 
-	<body class="bg-bodydark p-0 m-0 text-fontlight font-bricolage">
+	<body class="bg-bodydark  text-fontlight font-bricolage">
         
 		<Header />
-		<slot />
+		<main class="p-8 max-w-7xl gap-8 grid grid-cols-1 auto-rows-fr mx-auto">
+			<!-- Secciones aquí -->
+		  </main>
+		  
+				<slot />
+			</main>
 		<Footer />
 	
 	</body>
@@ -35,7 +40,7 @@ const { title, description, url, image } = Astro.props;
 
 
 <style is:global>
-	@tailwind base;
+  @tailwind base;
 	@tailwind components;
 	@tailwind utilities;
 	
@@ -56,44 +61,8 @@ const { title, description, url, image } = Astro.props;
 	  }
 
 
-	  @layer utilities {
-		.shadow-neon {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), /* Una sola capa */
-              0 0 25px rgba(255, 255, 255, 0.3); /* Segunda capa opcional */
-}
+      
 
-
-  .neon-effect {
-    position: block;
-	
-  }
-
-  .neon-effect::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 150%;
-    height: 150%;
-    background-color: rgba(0, 255, 0, 0.6);
-    border-radius: 50%;
-    filter: blur(5px);
-    opacity: 0.8;
-    animation: neon-pulse 0.8s ease-in-out infinite alternate;
-    pointer-events: none;
-  }
-
-  @keyframes neon-pulse {
-    from {
-      opacity: 0.8;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-  }
-}
 
 
 	</style>

@@ -15,6 +15,7 @@ module.exports = {
       fontFamily: {
         bricolage: ['"Bricolage Grotesque Variable"', 'sans-serif'],
       },
+ 
     },
   },
   plugins: [],
