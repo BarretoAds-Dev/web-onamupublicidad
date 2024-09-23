@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Imgs from '../components/images/homepage/Imgs.astro';
-import ServiceCard from '../components/Card.astro';
+import Imgs from '../ui-components/images/homepage/Imgs.astro';
+import ServiceCard from '../ui-components/cards/Card.astro';
+import Cta from '@/ui-components/buttons/Cta.astro';
 
 const meta = {
   title: "Bienvenido a Onamu",
@@ -16,7 +17,7 @@ const meta = {
 <section class="flex flex-col p-8 text-center gap-6 items-center leading-none">
 
   <!-- Estado con animación -->
-  <div class="relative flex items-center py-2 px-3 gap-2 rounded-full bg-black font-bold text-[calc(0.5rem+0.5vw)] justify-center border" role="status" aria-live="polite">
+  <div class="relative flex items-center py-2 px-3 gap-2 rounded-full bg-black font-bold text-[calc(0.5rem+0.5vw)] justify-center shadow-neon" role="status" aria-live="polite">
     <span class="relative flex h-3 w-3">
       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-80"></span>
       <span class="relative inline-flex rounded-full h-3 w-3 bg-green-400"></span>
@@ -33,11 +34,9 @@ const meta = {
   <p class="text-balance max-w-screen-sm text-[calc(1rem+0.5vw)]">
     Páginas Web a Medida para Empresas Mexicanas: Más Ventas, Mayor Visibilidad
   </p>
+  
+  <Cta />
 
-  <!-- Botón de acción principal -->
-  <a href="https://api.whatsapp.com/send?phone=5215526838286" target="_blank" rel="noopener noreferrer" aria-label="Cotiza tu página web en WhatsApp" class="leading-none px-10 py-3 rounded-xl text-white bg-red-600 font-bold text-[calc(1.2rem+0.5vw)] hover:bg-green-400 hover:text-black focus:outline-none focus:ring-4 focus:ring-red-300">
-    Cotiza Ahora<br>Tu Página Web
-  </a>
 
   <!-- Redes sociales -->
   <div class="flex justify-center space-x-8 text-lg">

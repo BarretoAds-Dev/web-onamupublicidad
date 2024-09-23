@@ -43,7 +43,7 @@ const { title, body, href } = selectedService;
 ---
 
 <!-- Cambié <ul> por <div> ya que es una tarjeta individual -->
-  <div class="p-6 h-44 w-full bg-bodydark backdrop-blur-xl font-bold rounded-lg transition-transform transform hover:scale-105 shadow-md hover:shadow-lg text-fontlight cursor-pointer border border-gray-600 border-opacity-30 hover:border-opacity-100 text-[calc(1rem+0.5vw)] group hover:bg-red-600 hover:text-white">
+  <div class="p-6 h-44 w-full bg-bodydark backdrop-blur-xl font-bold rounded-lg transition-transform transform hover:scale-105 shadow-md hover:shadow-lg text-fontlight cursor-pointer border border-green-400 border-opacity-30 hover:border-opacity-100 text-[calc(1rem+0.5vw)] group hover:bg-green-400 hover:text-bodydark ">
 
     <!-- Aseguramos que el <a> ocupe toda la altura y centramos su contenido -->
     <a href={href} class="flex flex-col justify-center items-center gap-4 h-full">
@@ -55,7 +55,7 @@ const { title, body, href } = selectedService;
       <p class="font-normal text-[calc(0.7rem+0.5vw)]">{body}</p>
   
       <!-- Texto interactivo de la tarjeta -->
-      <span class="text-sm text-white group-hover:text-2xl">Más</span>
+      <span class="text-sm group-hover:text-2xl ">Más</span>
   
     </a>
   </div>
