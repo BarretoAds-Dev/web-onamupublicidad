@@ -1,48 +1,68 @@
 ---
-export interface Props {
-  imageType?: string;
-  class?: string;
-  alt?: string;
-  loading?: "eager" | "lazy";
-  width?: string | number;
-  height?: string | number;
-}
+const props = Astro.props;
 
-const BASE_URL =
-  "https://res.cloudinary.com/onamuapp/image/upload/q_auto,fl_immutable_cache"; 
+// Base URL para Cloudinary con optimización automática de calidad y almacenamiento en caché
+const BASE_URL = "https://res.cloudinary.com/onamuapp/image/upload/q_auto,fl_immutable_cache";
+
+// Definición de imágenes específicas, cada una con su propia URL en Cloudinary
 const DEFAULT_IMAGE = "v1723315867/Hacemos-tu-pagina-web-en-cdmx_shddug.webp";
+const IMAGE_2_URL = "v1726796126/I38roD05udrE0J9SDKYjcy1wdj0.jpg_qcfsfc.avif";
+const IMAGE_3_URL = "v1726796125/ioKCUXXKO414RWIQn1o2fmkfTB4.jpg_n2qids.avif";
 
+// Función para generar el atributo srcset
 const generateSrcSet = (path: string): string => {
   return [300, 600, 900, 1200]
     .map((w) => `${BASE_URL}/f_avif,w_${w},c_limit/${path} ${w}w`)
     .join(", ");
 };
 
-const {
-  imageType = "image1",
-  class: customClass = "",
-  alt = "Diseño de Página Web Profesional en México",
-  loading = "eager",
-  width = 1100,
-  height = 450,
-} = Astro.props;
+// Asignación de variables con valores por defecto para evitar fallos si no se pasan props
+const imageType = props.imageType || "image1"; // Se asigna 'image1' como predeterminado si no se pasa imageType
+const customClass = props.class || "";
+// Permitir modificar el comportamiento de carga desde el componente (lazy o eager)
+const loading = props.loading || "eager"; // Carga 'eager' por defecto, pero configurable
 
-const path =
-  imageType === "image1" ? DEFAULT_IMAGE : `path/to/${imageType}.webp`;
+// Asignar alt desde props o usar un valor por defecto
+const alt = props.alt || "Imagen relacionada con diseño web"; // Texto alternativo por defecto
+
+// Selección del path de la imagen basado en el tipo de imagen
+let path;
+switch (imageType) {
+  case "image1":
+    path = DEFAULT_IMAGE;
+    break;
+  case "image2":
+    path = IMAGE_2_URL;
+    break;
+  case "image3":
+    path = IMAGE_3_URL;
+    break;
+  default:
+    path = `path/to/${imageType}.webp`; // Genera dinámicamente si se pasan más tipos de imagen
+}
+
+// Valores de width y height modificables desde el componente
+const width = props.width || 1024; // Por defecto, ancho 1024px
+const height = props.height || 450; // Por defecto, alto 450px
+
+// Generar srcset para soportar diferentes resoluciones de imagen
 const srcset = generateSrcSet(path);
-const fallbackSrc = `${BASE_URL}/f_auto/${path}`; // Usar f_auto para compatibilidad
+// Fallback para navegadores que no soportan avif o srcset
+const fallbackSrc = `${BASE_URL}/f_auto/${path}`; // Automáticamente selecciona el mejor formato disponible (e.g., jpeg, png)
 
+// Construcción de la clase CSS, eliminando espacios en blanco adicionales
 const className = `optimized-image ${customClass}`.trim();
 ---
 
+<!-- Renderizado de la imagen optimizada -->
 <img
-  src={fallbackSrc}
-  alt={alt}
-  class={`${className} block max-w-full h-auto rounded-2xl aspect-[1.66]`}
-  srcset={srcset}
-  sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw"
+  src={fallbackSrc} 
+  alt={alt} 
+  class={`${className} block max-w-full h-auto rounded-2xl aspect-[1.66]`} 
+  srcset={srcset} 
+  sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw" 
   loading={loading}
-  decoding="async"
-  width={String(width)}
-  height={String(height)}
+  decoding="async" 
+  width={String(width)} 
+  height={String(height)} 
 />

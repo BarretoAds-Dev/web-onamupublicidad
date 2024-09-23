@@ -27,12 +27,9 @@ const { title, description, url, image } = Astro.props;
 	<body class="bg-bodydark  text-fontlight font-bricolage">
         
 		<Header />
-		<main class="p-8 max-w-7xl gap-8 grid grid-cols-1 auto-rows-fr mx-auto">
-			<!-- Secciones aquí -->
-		  </main>
-		  
-				<slot />
-			</main>
+		<main>
+			<slot />
+		</main>
 		<Footer />
 	
 	</body>
@@ -60,9 +57,7 @@ const { title, description, url, image } = Astro.props;
 		line-gap-override: 20%;
 	  }
 
-
-      
-
+	  
 
 
 	</style>

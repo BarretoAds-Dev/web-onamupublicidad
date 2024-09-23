@@ -1,61 +1,55 @@
 ---
+// src/components/ServiceCard.astro
+
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+  serviceName: string;
 }
 
-const { href, title, body } = Astro.props;
+// Obtener las props del componente
+const { serviceName } = Astro.props;
+
+// Lista de servicios dentro del componente
+const services = [
+  {
+    title: "Diseño Web",
+    body: "Crea sitios web adaptativos y modernos.",
+    href: "/"
+  },
+  {
+    title: "SEO",
+    body: "Optimización para motores de búsqueda.",
+    href: "/"
+  },
+  {
+    title: "Publicidad Digital",
+    body: "Gestiona campañas en Google Ads y redes sociales.",
+    href: "/"
+  },
+  {
+    title: "Marketing de Contenidos",
+    body: "Atrae clientes mediante estrategias de contenido.",
+    href: "/"
+  }
+];
+
+// Buscamos el servicio basado en serviceName
+const selectedService = services.find(service => service.title === serviceName);
+
+if (!selectedService) {
+  throw new Error(`Service with title "${serviceName}" not found`);
+}
+
+const { title, body, href } = selectedService;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
+<ul class="p-6 h-full bg-bodydark backdrop-blur-xl font-bold rounded-lg transition-transform transform hover:scale-105 shadow-md hover:shadow-lg text-fontlight cursor-pointer border border-gray-600 border-opacity-30 hover:border-opacity-100  text-[calc(1rem+0.5vw)] group hover:bg-red-600 hover:text-white">
+  
+	<a href={href} class="h-full w-full flex flex-col justify-center items-center gap-4 ">
+	  <!-- El título cambiará de color rojo cuando hagas hover en la tarjeta -->
+	  <h2 class="transition-colors ">{title}</h2>
+	  
+	  <p class="font-normal text-[calc(0.7rem+0.5vw)]">{body}</p>
+	  <span class="text-sm text-red-600 group-hover:text-black">Leer más</span>
 	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-</style>
+  </ul>
+  
