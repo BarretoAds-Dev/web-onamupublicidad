@@ -1,8 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Imgs from '../ui-components/images/homepage/Imgs.astro';
-import ServiceCard from '../ui-components/cards/Card.astro';
-import Cta from '@/ui-components/buttons/Cta.astro';
+import Layout from '@/layouts/Layout.astro';
+import HeroSection from '@/layouts/components/Home/HeroSection.astro';
 
 const meta = {
   title: "Bienvenido a Onamu",
@@ -14,64 +12,6 @@ const meta = {
 
 <Layout {...meta}>
 
-<section class="flex flex-col p-8 text-center gap-6 items-center leading-none">
-
-  <!-- Estado con animación -->
-  <div class="relative flex items-center py-2 px-3 gap-2 rounded-full bg-black font-bold text-[calc(0.5rem+0.5vw)] justify-center shadow-neon" role="status" aria-live="polite">
-    <span class="relative flex h-3 w-3">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-80"></span>
-      <span class="relative inline-flex rounded-full h-3 w-3 bg-green-400"></span>
-    </span>
-    Tu Página Web En Línea
-  </div>
-
-  <!-- Título principal -->
-  <h1 class="text-balance max-w-screen-sm font-extrabold text-[calc(2.0rem+1vw)]">
-    Página Web Profesional en México para Hacer Crecer tu Negocio.
-  </h1>
-
-  <!-- Subtítulo -->
-  <p class="text-balance max-w-screen-sm text-[calc(1rem+0.5vw)]">
-    Páginas Web a Medida para Empresas Mexicanas: Más Ventas, Mayor Visibilidad
-  </p>
-  
-  <Cta />
-
-
-  <!-- Redes sociales -->
-  <div class="flex justify-center space-x-8 text-lg">
-    <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" aria-label="Dribbble" class="hover:underline ">Dribbble ↗</a>
-    <a href="https://linkedin.com/onamu" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:underline ">LinkedIn ↗</a>
-    <a href="https://github.com/BarretoAds-Dev" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:underline ">GitHub ↗</a>
-  </div>
-
-  <!-- Imágenes (componentes o estáticas) -->
-  <Imgs imageType="image2" alt="personas trabajando en linea con un sitio web" width={1024} height={425} loading="eager" />
-
-<!-- Tarjetas de servicios -->
-<ul class="grid grid-cols-1 md:grid-cols-5 grid-rows-auto gap-4 text-center  max-w-screen-lg" role="list">
-	<!-- Tarjeta 1 -->
-	<li class="col-span-1 md:col-span-3 row-span-2" role="listitem">
-	  <ServiceCard serviceName="Diseño Web" />
-	</li>
-	
-	<!-- Tarjeta 2 -->
-	<li class="col-span-1 md:col-span-2 row-span-2 md:col-start-4" role="listitem">
-	  <ServiceCard serviceName="SEO" />
-	</li>
-  
-	<!-- Tarjeta 3 -->
-	<li class="col-span-1 md:col-span-3 row-span-2 md:col-start-3 md:row-start-3" role="listitem">
-	  <ServiceCard serviceName="Publicidad Digital" />
-	</li>
-  
-	<!-- Tarjeta 4 -->
-	<li class="col-span-1 md:col-span-2 row-span-2 md:col-start-1 md:row-start-3" role="listitem">
-	  <ServiceCard serviceName="Diseño Gráfico" />
-	</li>
-  </ul>
-  
-
-</section>
+  <HeroSection />
 
 </Layout>
