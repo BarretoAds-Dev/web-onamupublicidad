@@ -1,15 +1,14 @@
 ---
 const { title, description, url, image } = Astro.props;
 
-const favicon = "/favicon.ico"; // Ruta del favicon
+const favicon = "https://res.cloudinary.com/onamuapp/image/upload/q_auto,w_50,h_5,fl_immutable_cache/v1723320517/Logo-Blanco-de-Onamu-Publicidad_qwowoi.webp"; // Ruta del favicon mejorada con tamaño adecuado para una mejor visualización
 const fontUrl =
   "https://cdn.jsdelivr.net/fontsource/fonts/bricolage-grotesque:vf@latest/latin-wght-normal.woff2";
-  
 ---
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <title>{title}</title>
@@ -34,7 +33,7 @@ const fontUrl =
   />
 
   <meta name="application-name" content="Onamu Publicidad" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileColor" content="#F9EBE0" />
   <meta name="msapplication-config" content="/browserconfig.xml" />
 
   <!-- Metadatos de Open Graph -->
@@ -46,5 +45,17 @@ const fontUrl =
   <meta property="og:site_name" content="Onamu Publicidad" />
   <meta property="og:locale" content="es_ES" />
 
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+  <meta name="twitter:url" content={url} />
 
+  <!-- Robots meta tag for SEO control -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Añadir seguridad y mejor rendimiento -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src https://cdn.jsdelivr.net;"> 
+  <meta name="theme-color" content="#131a26" />
 </head>

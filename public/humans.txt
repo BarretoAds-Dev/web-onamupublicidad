@@ -6,7 +6,7 @@
 
   Desarrollado por: Onamu Publicidad
   Contacto: contacto@onamupublicidad.dev
-  Sitio web: https://onamupublicidad.dev
+  Sitio web: [https://onamupublicidad.dev](https://onamupublicidad.dev)
 
 /********************************
 
@@ -21,7 +21,7 @@
   Optimización de Imágenes: Cloudinary
   Hosting: Cloudflare Pages
   Gestor de Paquetes: pnpm
-  Herramientas de Desarrollo: Visual Studio Code
+  Herramientas de Desarrollo: Visual Studio Code, Git
 
 /********************************
 
@@ -29,11 +29,13 @@
 
 ********************************/
 
-  Twitter: @onamupublicidad
-  LinkedIn: https://linkedin.com/company/onamupublicidad
-  Facebook: https://facebook.com/onamupublicidad
-  Instagram: https://instagram.com/onamupublicidad
-  YouTube: https://youtube.com/onamupublicidad
+  Twitter: [@onamupublicidad](https://twitter.com/onamupublicidad)
+  LinkedIn: [https://linkedin.com/company/onamupublicidad](https://linkedin.com/company/onamupublicidad)
+  Facebook: [https://facebook.com/onamupublicidad](https://facebook.com/onamupublicidad)
+  Instagram: [https://instagram.com/onamupublicidad](https://instagram.com/onamupublicidad)
+  YouTube: [https://youtube.com/onamupublicidad](https://youtube.com/onamupublicidad)
+  Pinterest: [https://pinterest.com/onamupublicidad](https://pinterest.com/onamupublicidad)
+  GitHub: [https://github.com/BarretoAds-Dev](https://github.com/BarretoAds-Dev)
 
 /********************************
 
@@ -41,4 +43,12 @@
 
 ********************************/
 
-  "Dedicado a todos aquellos que aman el código y el diseño."
+  "Dedicado a todos aquellos que aman el código, el diseño, y la creatividad sin límites."
+
+/********************************
+
+        OTRAS CONTRIBUCIONES
+
+********************************/
+
+  Comunidad: Agradecimientos especiales a los colaboradores de la comunidad de código abierto y a quienes comparten su conocimiento y experiencia.

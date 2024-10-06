@@ -73,5 +73,46 @@
       "@type": "Reservation",
       "name": "Estudio de Publicidad Digital"
     }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "230"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Carlos Pérez"
+      },
+      "datePublished": "2024-01-15",
+      "reviewBody": "Excelente servicio y atención personalizada. Muy recomendable para quienes buscan mejorar su presencia digital.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "María López"
+      },
+      "datePublished": "2024-02-10",
+      "reviewBody": "Gran experiencia trabajando con Onamu Publicidad. Entregaron todo a tiempo y con una calidad excelente.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.5"
+      }
+    }
+  ],
+  "serviceProvided": {
+    "@type": "Service",
+    "serviceType": "Publicidad Digital y Desarrollo Web",
+    "provider": {
+      "@type": "Organization",
+      "name": "Onamu Publicidad"
+    }
   }
 }

@@ -1,14 +1,13 @@
 ---
-import Head from '@/components/layout/PageHead.astro';
+import Head from '@/components/layout/PageHeadStructure.astro';
 import Header from '@/components/layout/header/Header.astro';
 import Footer from '@/components/layout/footer/Footer.astro';
 
 interface Props {
-	title: string;
-	description: string;
-	url: string;
-	image: string;
-
+  title: string;
+  description: string;
+  url: string;
+  image: string;
 }
 
 const { title, description, url, image } = Astro.props;
@@ -22,42 +21,43 @@ const { title, description, url, image } = Astro.props;
     OnamuPublicidad.dev & BarretoAds.Dev | Transformamos Tu Visión en Realidad.
  -->
 <html lang="es" dir="ltr">
-	<Head title={title} description={description} url={url} image={image} />
+  <Head title={title} description={description} url={url} image={image} />
 
-	<body class="bg-bodydark  text-fontlight font-bricolage">
-        
-		<Header />
-		<main>
-			<slot />
-		</main>
-		<Footer />
-	
-	</body>
+  <body class="bg-bodydark text-fontlight font-bricolage overflow-x-hidden m-0 p-0">
+    <Header />
+    <main id="main-content" role="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
-
 
 <style is:global>
   @tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-	
-	@font-face {
-		font-family: "Bricolage Grotesque Variable";
-		font-style: normal;
-		font-weight: 400 800;
-		font-optical-sizing: auto;
-		font-display: swap;
-		font-stretch: normal; /* added */
-		src: url("https://cdn.jsdelivr.net/fontsource/fonts/bricolage-grotesque:vf@latest/latin-wght-normal.woff2")
-		  format("woff2-variations");
-		unicode-range: U+0000-00FF;
-		font-feature-settings: "kern", "liga", "calt";
-		font-variation-settings: "wght" 400 800;
-		ascent-override: 90%;
-		line-gap-override: 20%;
-	  }
+  @tailwind components;
+  @tailwind utilities;
 
-	  
+  @font-face {
+    font-family: "Bricolage Grotesque Variable";
+    font-style: normal;
+    font-weight: 400 800;
+    font-optical-sizing: auto;
+    font-display: swap;
+    font-stretch: normal;
+    src: url("https://cdn.jsdelivr.net/fontsource/fonts/bricolage-grotesque:vf@latest/latin-wght-normal.woff2")
+      format("woff2-variations");
+    unicode-range: U+0000-00FF;
+    font-feature-settings: "kern", "liga", "calt";
+    font-variation-settings: "wght" 400 800;
+  }
 
-
-	</style>
+  /* Eliminación de reglas innecesarias y aprovechamiento de Tailwind */
+  main {
+    @apply flex flex-col items-center justify-center;
+  }
+  @layer components {
+  .menu-links {
+    @apply  hover:text-bodydark hover:font-medium transition-colors px-3 py-2 hover:bg-green-400 rounded-md;
+  }
+}
+</style>

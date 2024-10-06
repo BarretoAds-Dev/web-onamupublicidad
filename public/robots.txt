@@ -6,8 +6,9 @@ Disallow: /scripts/        # Bloquea scripts internos si no deben ser rastreados
 Disallow: /old-version/    # Bloquea versiones antiguas del sitio
 
 # Evita el rastreo de parámetros de URL que no afectan el contenido
-Disallow: /*?utm_source
-Disallow: /*?sessionid
+Disallow: /*?utm_source$
+Disallow: /*?sessionid$
+Disallow: /*?ref=
 
 # Permite el rastreo de JavaScript, CSS, e imágenes para evitar penalizaciones de Google
 Allow: /*.css$
@@ -19,9 +20,16 @@ User-agent: Googlebot
 Allow: /css/
 Allow: /fonts/
 Allow: /js/
+Allow: /*.woff2$
 
 # Bloquea bots específicos conocidos por generar tráfico no deseado
 User-agent: BadBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
 Disallow: /
 
 # Especifica la ubicación del sitemap

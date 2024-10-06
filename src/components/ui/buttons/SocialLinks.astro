@@ -12,26 +12,26 @@ interface Props {
 
 const { label } = Astro.props;
 
-const links = [
+const links: SocialLink[] = [
   { href: "https://dribbble.com", label: "Dribbble" },
-  { href: "https://linkedin.com/onamu", label: "LinkedIn" },
+  { href: "https://linkedin.com/company/onamupublicidad", label: "LinkedIn" },
   { href: "https://github.com/BarretoAds-Dev", label: "GitHub" }
 ];
 
 // Filtrar los enlaces según la etiqueta proporcionada, si se pasa el `label`.
-const filteredLinks = label ? links.filter(link => link.label === label) : links;
+const filteredLinks = label ? links.filter(link => link.label.toLowerCase() === label.toLowerCase()) : links;
 ---
 
 <div class="flex justify-center space-x-8 text-lg">
-  {filteredLinks.map((link) => (
+  {filteredLinks.map(({ href, label }) => (
     <a 
-      href={link.href} 
+      href={href} 
       target="_blank" 
       rel="noopener noreferrer" 
-      aria-label={link.label} 
-      class="hover:underline"
+      aria-label={label} 
+      class="hover:underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-500"
     >
-      {link.label} ↗
+      {label} ↗
     </a>
   ))}
 </div>

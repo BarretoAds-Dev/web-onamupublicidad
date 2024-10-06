@@ -1,0 +1,55 @@
+---
+// src/components/ServiceCard.astro
+
+interface Props {
+  serviceName: string;
+}
+
+// Obtener las props del componente
+const { serviceName } = Astro.props;
+
+// Lista de servicios dentro del componente
+const services = [
+  {
+    title: "Diseño Web",
+    body: "Crea sitios web adaptativos y modernos.",
+    href: "/"
+  },
+  {
+    title: "SEO",
+    body: "Optimización para motores de búsqueda.",
+    href: "/"
+  },
+  {
+    title: "Publicidad Digital",
+    body: "Gestiona campañas en Google Ads y redes sociales.",
+    href: "/"
+  },
+  {
+    title: "Diseño Gráfico",
+    body: "Refleja tu esencia empresarial con diseños personalizados.",
+    href: "/"
+  } 
+];
+
+// Buscamos el servicio basado en serviceName
+const selectedService = services.find(service => service.title.toLowerCase() === serviceName.toLowerCase());
+
+if (!selectedService) {
+  throw new Error(`Service with title "${serviceName}" not found`);
+}
+
+const { title, body, href } = selectedService;
+---
+
+<!-- Tarjeta de Servicio -->
+<div class="p-6 h-44 w-full bg-bodydark backdrop-blur-xl font-bold rounded-lg transition-transform transform hover:scale-105 shadow-md hover:shadow-lg text-fontlight cursor-pointer border border-green-400 border-opacity-30 hover:border-opacity-100 text-[calc(1rem+0.5vw)] group hover:bg-green-400 hover:text-bodydark">
+  <a href={href} class="flex flex-col justify-center items-center gap-4 h-full">
+    <!-- Título de la tarjeta -->
+    <h2>{title}</h2>
+    <!-- Descripción de la tarjeta -->
+    <p class="font-normal text-[calc(0.7rem+0.5vw)]">{body}</p>
+    <!-- Texto interactivo de la tarjeta -->
+    <span class="text-sm group-hover:text-2xl">Más</span>
+  </a>
+</div>

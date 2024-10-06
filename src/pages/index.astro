@@ -1,17 +1,18 @@
 ---
 import PageLayout from '@/components/layout/PageLayout.astro';
 import Hero from '@/components/widgets/home/HeroSection.astro';
+import OptimizedImage from '@/services/CloudinaryInt.jsx';
 
 const meta = {
-  title: "Bienvenido a Onamu",
-  description: "Páginas Web que Dejan Huellas y Transforman Negocios en México.",
+  title: "Bienvenido a Onamu | Páginas Web Profesionales en México",
+  description: "Creamos páginas web que dejan huella y transforman negocios en México. Descubre cómo podemos ayudarte a incrementar tu visibilidad online y tus ventas.",
   url: "https://onamupublicidad.dev",
-  image: "https://onamupublicidad.dev",
+  image: "https://res.cloudinary.com/onamuapp/image/upload/q_auto,fl_immutable_cache/v1726796126/I38roD05udrE0J9SDKYjcy1wdj0.jpg_qcfsfc.avif",
+  ogType: "website",
+  ogLocale: "es_MX",
 };
 ---
 
 <PageLayout {...meta}>
-
   <Hero />
-
 </PageLayout>

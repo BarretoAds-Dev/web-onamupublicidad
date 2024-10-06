@@ -1,48 +1,20 @@
 ---
-export interface Props {
-  imageType?: string;
-  class?: string;
-  alt?: string;
-  loading?: "eager" | "lazy";
-  width?: string | number;
-  height?: string | number;
-}
-
-const BASE_URL =
-  "https://res.cloudinary.com/onamuapp/image/upload/q_auto,fl_immutable_cache";
-const DEFAULT_IMAGE = "v1723320517/Logo-Blanco-de-Onamu-Publicidad_qwowoi.webp";
-
-const generateSrcSet = (path: string, format: string): string => {
-  return [200, 300]
-    .map((w) => `${BASE_URL}/f_${format},w_${w},c_limit/${path} ${w}w`)
-    .join(", ");
-};
-
-const {
-  imageType = "Logo-Blanco",
-  class: customClass = "",
-  alt = "Imagen optimizada de Onamu Publicidad",
-  loading = "eager",
-  width = 250,
-  height = 50,
-} = Astro.props;
-
-const path =
-  imageType === "Logo-Blanco" ? DEFAULT_IMAGE : `path/to/${imageType}.webp`;
-const avifSrcset = generateSrcSet(path, "avif");
-const fallbackSrc = `${BASE_URL}/f_auto,q_auto,dpr_auto,fl_immutable_cache/${path}`;const className = `optimized-image ${customClass}`.trim();
+import LogoBlanco from "@/components/ui/images/homepage/Logos.astro";
 ---
 
-<header class="max-w-full p-6 flex justify-center items-center  ">
-  <img
-    src={fallbackSrc}
-    srcset={avifSrcset}
-    alt={alt}
-    class={`${className}  block max-w-full h-auto aspect-[5/1]`}
-    loading={loading}
-    decoding="async"
-    width={typeof width === "number" ? width.toString() : width}
-    height={typeof height === "number" ? height.toString() : height}
-    sizes="(max-width: 900px) 200px, 300px"
-  />
+
+<header class="max-w-full p-6 flex justify-center items-center h-20">
+
+
+
+  <LogoBlanco
+  imageType="Logo-Blanco"
+  alt="personas trabajando en línea con un sitio web"
+  width={150}
+  height={29}
+  loading="eager"
+  sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw"
+/>
+
+
 </header>
