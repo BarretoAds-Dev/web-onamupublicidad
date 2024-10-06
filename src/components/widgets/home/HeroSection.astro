@@ -1,7 +1,9 @@
 ---
-import Imgs from '@/components/ui/images/homepage/Imgs.astro';
+
 import Cta from '@/components/ui/buttons/Cta.astro';
 import SocialLinks from '@/components/ui/buttons/SocialLinks.astro';
+
+import OptimizedImage from '@/services/CloudinaryInt.jsx';
 
 ---
 
@@ -9,10 +11,9 @@ import SocialLinks from '@/components/ui/buttons/SocialLinks.astro';
 <section class="flex flex-col p-8 text-center gap-6 items-center leading-none">
 
   <!-- Animacion en línea -->
-  <div class="relative py-2 px-3 rounded-full bg-black font-bold text-xs flex items-center gap-2 justify-center shadow-neon" role="status" aria-live="polite">
-    <span class="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-    Tu Página Web En Línea
-</div>
+  <div class="flex items-center gap-2 py-2 px-3 bg-black font-bold text-xs rounded-full shadow-neon">
+    <span class="inline-block h-2 w-2 rounded-full bg-green-400 animate-pulse"></span> Tu Página Web En Línea
+  </div>
 
   
     <!-- Título principal -->
@@ -26,12 +27,25 @@ import SocialLinks from '@/components/ui/buttons/SocialLinks.astro';
     </p>
     
 
-    <Cta />
-    <SocialLinks />
-
+     <!-- Botón CTA -->
+  <Cta />
   
+  <!-- Redes sociales -->
+  <SocialLinks />
+  
+
     <!-- Imágenes (componentes o estáticas) -->
-    <Imgs imageType="image2" alt="personas trabajando en linea con un sitio web" width={1024} height={425} loading="eager" />
+    <OptimizedImage
+    imageType="image2"
+    alt="personas trabajando en línea con un sitio web"
+    width={1024}
+    height={425}
+    loading="eager"
+    sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw"
+    className=""
+  />
+  
+
   
   
   </section>

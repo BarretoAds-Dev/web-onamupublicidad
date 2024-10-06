@@ -12,7 +12,7 @@ const IMAGE_3_URL = "v1726796125/ioKCUXXKO414RWIQn1o2fmkfTB4.jpg_n2qids.avif";
 // Función para generar el atributo srcset
 const generateSrcSet = (path: string): string => {
   return [300, 600, 900, 1200]
-    .map((w) => `${BASE_URL}/f_avif,w_${w},c_limit/${path} ${w}w`)
+    .map((w) => `${BASE_URL}/f_auto,q_auto,w_${w},c_limit/${path} ${w}w`)
     .join(", ");
 };
 
@@ -20,7 +20,7 @@ const generateSrcSet = (path: string): string => {
 const imageType = props.imageType || "image1"; // Se asigna 'image1' como predeterminado si no se pasa imageType
 const customClass = props.class || "";
 // Permitir modificar el comportamiento de carga desde el componente (lazy o eager)
-const loading = props.loading || "eager"; // Carga 'eager' por defecto, pero configurable
+const loading = props.loading || "lazy"; // Carga 'Lazy' por defecto, pero configurable
 
 // Asignar alt desde props o usar un valor por defecto
 const alt = props.alt || "Imagen relacionada con diseño web"; // Texto alternativo por defecto

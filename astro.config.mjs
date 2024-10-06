@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cloudflare from '@astrojs/cloudflare';
 import viteCompression from 'vite-plugin-compression';
 import tailwind from '@astrojs/tailwind';
+import react from '@astrojs/react';
 
 // Cargar variables de entorno desde el archivo .env
 dotenv.config();
@@ -18,7 +19,7 @@ export default defineConfig({
     },
   }),
   integrations: [
-
+    react(),
     tailwind({
       config: {
         content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],

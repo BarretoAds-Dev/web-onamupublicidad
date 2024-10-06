@@ -9,7 +9,7 @@ module.exports = {
         './src/**/*.{html,js,jsx,ts,tsx,astro}',
       ],
       defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: [/^bg-/, /^text-/],
+      safelist: [/^bg-/, /^text-/, /^w-/], 
     }),
     require('cssnano')({
       preset: [
