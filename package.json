@@ -14,23 +14,23 @@
     "build": "pnpm run clean && astro check && astro build && pnpm run github && pnpm run deploy"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "astro": "^4.15.7",
+    "@astrojs/check": "^0.9.4",
+    "astro": "^4.15.11",
     "autoprefixer": "^10.4.20",
     "cloudinary": "^2.5.0",
     "dotenv": "^16.4.5",
     "postcss": "^8.4.47",
     "rimraf": "^6.0.1",
-    "tailwindcss": "^3.4.12",
+    "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2",
     "vite-plugin-compression": "^0.5.1"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "^11.0.5",
+    "@astrojs/cloudflare": "^11.1.0",
     "@astrojs/tailwind": "^5.1.1",
-    "@cloudflare/workers-types": "^4.20240909.0",
+    "@cloudflare/workers-types": "^4.20241004.0",
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "cssnano": "^7.0.6",
-    "wrangler": "^3.78.4"
+    "wrangler": "^3.80.0"
   }
 }
