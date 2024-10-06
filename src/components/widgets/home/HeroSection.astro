@@ -1,0 +1,37 @@
+---
+import Imgs from '@/components/ui/images/homepage/Imgs.astro';
+import Cta from '@/components/ui/buttons/Cta.astro';
+import SocialLinks from '@/components/ui/buttons/SocialLinks.astro';
+
+---
+
+
+<section class="flex flex-col p-8 text-center gap-6 items-center leading-none">
+
+  <!-- Animacion en línea -->
+  <div class="relative py-2 px-3 rounded-full bg-black font-bold text-xs flex items-center gap-2 justify-center shadow-neon" role="status" aria-live="polite">
+    <span class="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+    Tu Página Web En Línea
+</div>
+
+  
+    <!-- Título principal -->
+    <h1 class="text-balance max-w-screen-sm font-extrabold text-[calc(2.0rem+1vw)]">
+      Página Web Profesional en México para Hacer Crecer tu Negocio.
+    </h1>
+  
+    <!-- Subtítulo -->
+    <p class="text-balance max-w-screen-sm text-[calc(1rem+0.5vw)]">
+      Páginas Web a Medida para Empresas Mexicanas: Más Ventas, Mayor Visibilidad
+    </p>
+    
+
+    <Cta />
+    <SocialLinks />
+
+  
+    <!-- Imágenes (componentes o estáticas) -->
+    <Imgs imageType="image2" alt="personas trabajando en linea con un sitio web" width={1024} height={425} loading="eager" />
+  
+  
+  </section>

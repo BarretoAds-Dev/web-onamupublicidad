@@ -1,0 +1,37 @@
+---
+// SocialLinks.astro
+
+export interface SocialLink {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  label?: string;
+}
+
+const { label } = Astro.props;
+
+const links = [
+  { href: "https://dribbble.com", label: "Dribbble" },
+  { href: "https://linkedin.com/onamu", label: "LinkedIn" },
+  { href: "https://github.com/BarretoAds-Dev", label: "GitHub" }
+];
+
+// Filtrar los enlaces según la etiqueta proporcionada, si se pasa el `label`.
+const filteredLinks = label ? links.filter(link => link.label === label) : links;
+---
+
+<div class="flex justify-center space-x-8 text-lg">
+  {filteredLinks.map((link) => (
+    <a 
+      href={link.href} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      aria-label={link.label} 
+      class="hover:underline"
+    >
+      {link.label} ↗
+    </a>
+  ))}
+</div>
