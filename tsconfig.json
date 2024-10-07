@@ -38,6 +38,6 @@
     "preserveWatchOutput": true,                // Mantener la salida de observación para facilitar el desarrollo
     "disableSizeLimit": true                    // Deshabilitar el límite de tamaño de proyecto para evitar errores en proyectos grandes
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"],  // Asegurar inclusión de archivos .tsx
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "src/components/layout/header/MobileLinks.jsx", "src/services/Menutoggle.jsx"],  // Asegurar inclusión de archivos .tsx
   "exclude": ["node_modules", "dist", ".astro"]
 }

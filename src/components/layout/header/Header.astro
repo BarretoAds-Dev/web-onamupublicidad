@@ -1,20 +1,33 @@
 ---
+// Header Componenet
 import LogoBlanco from "@/components/ui/images/homepage/Logos.astro";
+import NavBar from "@/components/layout/header/NavBar.astro";
+
+
 ---
 
+<!-- Componente del botón hamburguesa y lógica del menú (React) -->
 
-<header class="max-w-full p-6 flex justify-center items-center h-20">
+<header class="sticky top-0 mw-full pt-1 flex justify-center items-center z-50 ">
+
+  <nav role="navigation" aria-label="Main navigation" class="flex-row flex  bg-black font-medium  items-center rounded-xl shadow-xl gap-0 justify-self-center ">
+    
 
 
+ <LogoBlanco
+    imageType="Logo-Blanco"
+    alt="Logo original blanco de onamu publicidad"
+    width={150}
+    height={29}
+    loading="eager"
+    sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw"
+    class="z-10"
+  /> 
 
-  <LogoBlanco
-  imageType="Logo-Blanco"
-  alt="personas trabajando en línea con un sitio web"
-  width={150}
-  height={29}
-  loading="eager"
-  sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw"
-/>
 
+  <NavBar /> 
+
+
+ </nav>
 
 </header>

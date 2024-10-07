@@ -23,7 +23,7 @@ const { title, description, url, image } = Astro.props;
 <html lang="es" dir="ltr">
   <Head title={title} description={description} url={url} image={image} />
 
-  <body class="bg-bodydark text-fontlight font-bricolage overflow-x-hidden m-0 p-0">
+  <body class="bg-bodydark text-fontlight font-bricolage  m-0 p-0">
     <Header />
     <main id="main-content" role="main">
       <slot />
@@ -57,7 +57,10 @@ const { title, description, url, image } = Astro.props;
   }
   @layer components {
   .menu-links {
-    @apply  hover:text-bodydark hover:font-medium transition-colors px-3 py-2 hover:bg-green-400 rounded-md;
+    @apply hover:text-bodydark font-semibold transition-transform duration-300 px-5 py-3 hover:bg-green-400 rounded-lg hover:scale-105 ease-in-out
   }
 }
+
+
+
 </style>
