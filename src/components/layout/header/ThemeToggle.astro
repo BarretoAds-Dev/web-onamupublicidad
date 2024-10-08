@@ -1,0 +1,93 @@
+---
+  // src/components/layout/header/ThemeToggle.astro
+---
+
+<!-- Botón Hamburguesa (Visible en Móviles) -->
+<button
+  id="menu-toggle"
+  class="md:hidden mr-4 block p-1 rounded-md bg-green-400 text-bodydark hover:bg-green-500 hover:text-fontlight focus:outline-none z-50"
+  aria-controls="menu"
+  aria-expanded="false"
+>
+  <svg id="menu-open-icon" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h10M4 18h16" />
+  </svg>
+  <svg id="menu-close-icon" class="h-7 w-7 hidden hover:text-red-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const openIcon = document.getElementById('menu-open-icon');
+    const closeIcon = document.getElementById('menu-close-icon');
+
+    if (!menuToggle || !menu || !openIcon || !closeIcon) {
+      console.error('Error: No se pudo encontrar uno o más elementos del menú.');
+      return;
+    }
+
+    // Variables de estado
+    let isMenuOpen = false;
+    let resizeTimeout: number | null = null; // Definición explícita del tipo
+
+    // Función para alternar menú
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
+
+      // Actualiza visibilidad del menú
+      menu.classList.toggle('hidden', !isMenuOpen);
+      document.body.classList.toggle('overflow-hidden', isMenuOpen);
+
+      // Cambia iconos de abrir/cerrar
+      openIcon.classList.toggle('hidden', isMenuOpen);
+      closeIcon.classList.toggle('hidden', !isMenuOpen);
+
+      // Añade o elimina clases de posición del botón hamburguesa
+      menuToggle.classList.toggle('fixed', isMenuOpen);
+      menuToggle.classList.toggle('top-10', isMenuOpen);
+      menuToggle.classList.toggle('right-10', isMenuOpen);
+
+      // Actualiza el atributo `aria-expanded`
+      menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Función para manejar el redimensionamiento de la pantalla
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        menu.classList.remove('hidden');
+        document.body.classList.remove('overflow-hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        menuToggle.classList.remove('fixed', 'top-10', 'right-10');
+      } else {
+        if (!isMenuOpen) {
+          menu.classList.add('hidden');
+        }
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+      menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+    };
+
+    // Optimización del evento `resize` para reducir recálculos innecesarios
+    const optimizedResize = () => {
+      if (resizeTimeout !== null) {
+        window.cancelAnimationFrame(resizeTimeout);
+      }
+      resizeTimeout = window.requestAnimationFrame(() => {
+        handleResize();
+        resizeTimeout = null; // Reinicia a null después de usar
+      });
+    };
+
+    window.addEventListener('resize', optimizedResize, { passive: true });
+
+    // Inicializa el estado correcto del menú
+    handleResize();
+  });
+</script>

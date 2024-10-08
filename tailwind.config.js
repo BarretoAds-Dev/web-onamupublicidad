@@ -3,13 +3,7 @@ module.exports = {
   content: [
     './src/**/*.{astro,html,js,jsx,ts,tsx}', // Ajusta estas rutas según la estructura de tu proyecto
   ],
-  safelist: [
-    'hidden', // Añade aquí cualquier clase que utilices dinámicamente
-    'fixed',
-    'top-10',
-    'right-10',
-    'overflow-hidden',
-  ],
+ 
   theme: {
     extend: {
       boxShadow: {
